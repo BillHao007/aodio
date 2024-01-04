@@ -1,0 +1,42 @@
+{
+  "name": "aodio",
+  "version": "1.0.0",
+  "main": "./dist/main.js",
+  "repository": "git@github.com:BillHao007/aodio.git",
+  "author": "billhao007",
+  "license": "MIT",
+  "dependencies": {
+    "@types/node": "^20.10.6",
+    "find-process": "^1.4.7",
+    "typescript": "^5.3.3"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "cross-env": "^7.0.3",
+    "electron": "^28.1.0",
+    "electron-builder": "^24.9.1",
+    "ts-node": "^10.9.2",
+    "wait-on": "^7.2.0"
+  },
+  "scripts": {
+    "start": "yarn cross-env PORT=8081 NODE_ENV=development yarn start:concurrently",
+    "start:concurrently": "concurrently --kill-others \"yarn start:renderer\" \"wait-on http://localhost:8081 && yarn start:main\" ",
+    "start:main": "yarn tsc && electron .",
+    "start:renderer": "cd renderer && yarn start",
+    "build": "yarn cross-env NODE_ENV=production yarn tsc && yarn build:renderer && electron-builder",
+    "build:test": "yarn cross-env NODE_ENV=production yarn build:renderer && yarn start:main",
+    "build:renderer": "cd renderer && yarn build"
+  },
+  "build": {
+    "appId": "com.bh13.aodio",
+    "productName": "aodio",
+    "files": [
+      "renderer/build/**/*",
+      "node_modules/**/*",
+      "dist/**/*"
+    ],
+    "directories": {
+      "output": "build"
+    }
+  }
+}

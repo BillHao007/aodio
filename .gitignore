@@ -134,3 +134,4 @@ dist
 
 # custom
 /doc
+.DS_Store

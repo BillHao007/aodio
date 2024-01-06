@@ -1,26 +1,22 @@
-import Hello from './components/Hello/Hello';
-import logo from './logo.svg';
-import './App.css';
+import { AoConfigProvider } from './components';
+import { App as AntdApp } from 'antd';
+import { createContext, StateMgmtContextProvider, useContextState } from './library/state-mgmt';
+import './App.less';
+
+const AoAppContext = createContext();
+
+export const useAppState = 
+  (key?: string, initValue?: any) => useContextState(AoAppContext, key, initValue);
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React2
-        </a>
-        <Hello />
-      </header>
-    </div>
+    <AoConfigProvider>
+      <AntdApp className="ao-app">
+        <StateMgmtContextProvider context={AoAppContext}>
+          <h1>Hello</h1>
+        </StateMgmtContextProvider>
+      </AntdApp>
+    </AoConfigProvider>
   );
 }
 

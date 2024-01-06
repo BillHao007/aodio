@@ -1,3 +1,4 @@
+const path = require('path');
 const CracoAntDesignPlugin = require('craco-antd');
 
 module.exports = {
@@ -5,5 +6,10 @@ module.exports = {
     {
       plugin: CracoAntDesignPlugin,
     }
-  ]
+  ],
+  webpack: {
+    alias: {
+      '@': path.resolve(__dirname, 'src'),
+    }
+  }
 }

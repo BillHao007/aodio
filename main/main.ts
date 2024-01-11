@@ -10,11 +10,13 @@ import { isEnvDevelopment } from './library';
 const createWindow = () => {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
-    width: 800,
-    height: 600,
+    width: 1600,
+    height: 900,
     webPreferences: {
-      preload: path.join(__dirname, './preload.js')
-    }
+      nodeIntegration: true, // 开启在dom中使用nodejs模块
+      preload: path.join(__dirname, './preload.js'),
+    },
+    frame: false,
   })
   // 加载 index.html
   // mainWindow.loadFile('index.html')

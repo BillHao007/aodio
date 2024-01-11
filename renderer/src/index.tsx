@@ -1,15 +1,26 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.less';
+import { HashRouter } from 'react-router-dom';
+import { StateMgmtProvider } from './library/state-mgmt';
+import { AoConfigProvider } from './components';
 import App from './App';
+import { AppContext } from './app-state';
+import themeConfig from './themeConfig';
 import reportWebVitals from './reportWebVitals';
+import './index.css';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <App />
+    <StateMgmtProvider context={AppContext}>
+      <HashRouter>
+        <AoConfigProvider theme={themeConfig}>
+          <App />
+        </AoConfigProvider>
+      </HashRouter>
+    </StateMgmtProvider>
   </React.StrictMode>
 );
 

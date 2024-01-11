@@ -1,12 +1,12 @@
-import { ConfigProvider, ConfigProviderProps } from "antd";
+import { ThemeProvider, ThemeProviderProps } from "antd-style";
 
-export interface AoConfigProviderProps extends ConfigProviderProps{};
+export interface AoConfigProviderProps<T, S> extends ThemeProviderProps<T, S>{};
 
-export default function AoConfigProvider(props: AoConfigProviderProps) {
+export default function AoConfigProvider<T = any, S = any>(props: AoConfigProviderProps<T, S>) {
   const { children, ...rest } = props;
   return (
-    <ConfigProvider {...rest}>
+    <ThemeProvider {...rest}>
       {children}
-    </ConfigProvider>
+    </ThemeProvider>
   );
 }

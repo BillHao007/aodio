@@ -1,0 +1,1 @@
+export { default as CaptionControl } from './CaptionControl';

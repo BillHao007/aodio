@@ -1,6 +1,4 @@
-export interface AnyObject {
-  [key: string]: any;
-}
+import { AnyObject } from "../type";
 
 export type ActionTypes = 'SET_STATE';
 export interface ActionProps extends AnyObject {

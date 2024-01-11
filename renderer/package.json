@@ -5,12 +5,11 @@
   "homepage": "./",
   "license": "MIT",
   "devDependencies": {
-    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@craco/craco": "^7.1.0",
-    "less": "^4.2.0",
-    "less-loader": "^11.1.4"
+    "babel-plugin-antd-style": "^1.0.4"
   },
   "dependencies": {
+    "@ant-design/icons": "^5.2.6",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^13.0.0",
     "@testing-library/user-event": "^13.2.1",
@@ -20,8 +19,7 @@
     "@types/react-dom": "^18.2.18",
     "ahooks": "^3.7.8",
     "antd": "^5.12.7",
-    "craco-antd": "^2.0.0",
-    "craco-less": "^3.0.1",
+    "antd-style": "^3.6.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.21.1",

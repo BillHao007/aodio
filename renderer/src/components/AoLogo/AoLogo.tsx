@@ -1,5 +1,6 @@
 import { isNumber } from "@/library/utils";
-import { createStyles } from "antd-style"
+import { createStyles } from "antd-style";
+import type { AoLogoProps } from './interface';
 
 const useStyles = createStyles(({ css }, props: { size?: string | number } = {}) => {
   const { size = 80 } = props;
@@ -15,11 +16,6 @@ const useStyles = createStyles(({ css }, props: { size?: string | number } = {})
     `,
   };
 });
-
-export interface AoLogoProps{
-  className?: string;
-  size?: string | number;
-}
 
 export default function AoLogo(props: AoLogoProps) {
   const { size, className } = props;

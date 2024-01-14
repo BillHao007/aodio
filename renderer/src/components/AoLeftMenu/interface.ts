@@ -1,3 +1,3 @@
-export interface AoLeftMenuProps{
-  className?: string;
-}
+import type { ComponentBaseProps } from "../types";
+
+export interface AoLeftMenuProps extends ComponentBaseProps {};

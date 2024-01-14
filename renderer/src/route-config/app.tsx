@@ -1,5 +1,6 @@
 import type { RouteConfigList } from "./type";
 import AoHome from "@/pages/AoHome";
+import AoVideoConvert from "@/pages/AoVideoConvert";
 
 const routeConfig: RouteConfigList = [
   // {
@@ -18,8 +19,13 @@ const routeConfig: RouteConfigList = [
   // }
   {
     name: 'home',
-    path: '/',
+    path: '/home',
     component: AoHome
+  },
+  {
+    name: 'videoConvert',
+    path: '/',
+    component: AoVideoConvert
   }
 ];
 

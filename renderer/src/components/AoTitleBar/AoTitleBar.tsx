@@ -1,6 +1,7 @@
+import { Button, Divider } from 'antd';
 import { LeftOutlined, QuestionCircleOutlined, GithubOutlined, SkinOutlined, SettingOutlined } from '@ant-design/icons';
+import AoIconButton from '../AoIconButton';
 import { CaptionControl } from './components';
-import { Button, Tooltip, Divider } from 'antd';
 import useAoTitleBarStyles from './style';
 
 export default function AoTitleBar() {
@@ -11,11 +12,11 @@ export default function AoTitleBar() {
       <div className="left-area">
         <Button type="text" icon={<LeftOutlined />} className="ao-title-bar-item"/>
         <span className="ao-title-bar-item title">音频一图流</span>
-        <Tooltip
+        <AoIconButton
           title="单图视频"
-        >
-          <Button type="text" icon={<QuestionCircleOutlined style={{ fontSize: '0.875rem'}}/>} className="ao-title-bar-item title-tip"/>
-        </Tooltip>
+          className="ao-title-bar-item title-tip"
+          icon={<QuestionCircleOutlined style={{ fontSize: '0.875rem'}}/>}
+        />
       </div>
       <div className="right-area">
         <Button type="text" icon={<SkinOutlined />} className="ao-title-bar-item"/>

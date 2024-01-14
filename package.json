@@ -28,7 +28,8 @@
     "build:test": "yarn cross-env NODE_ENV=production yarn build:renderer && yarn start:main",
     "build:renderer": "cd renderer && yarn build",
     "rm": "cd renderer && yarn remove",
-    "a": "cd renderer && yarn add"
+    "a": "cd renderer && yarn add",
+    "i": "cd renderer && yarn install"
   },
   "build": {
     "appId": "com.bh13.aodio",
